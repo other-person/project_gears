@@ -1,0 +1,444 @@
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+*:hover
+    transition-duration: .3s
+html
+    font-family: "Roboto", sans-serif
+    scroll-behavior: smooth
+
+/*Variables*/
+$color-bg-blocks: #fff
+$color-bg-other-blocks: #ECECEC
+$color-text: #0B314F
+$color-bg-nav: #474A51
+$color-bg-footer: #474A51
+$color-bg-footer-text: #fff
+/*Variables*/
+
+/*MIXINS*/
+@mixin header_column
+    display: flex
+    flex-flow: column
+    font-family: Roboto
+    font-size: 18px
+    font-style: normal
+    font-weight: 700
+    line-height: 30px
+    color: $color-text
+
+@mixin header_links
+    text-decoration: none
+    color: #0B314F
+
+    &:hover
+        cursor: pointer
+        text-decoration: none
+        color: #3ca7d1
+
+@mixin name_blocks
+    font-weight: 700
+    font-size: 36px
+    letter-spacing: 2px
+    color: $color-text
+/*MIXINS*/
+
+.head_wrapper, .navigation_wrapper, .call_wrapper, .services_wrapper, .advantages_wrapper, .to-order_wrapper, .about_us_wrapper, .footer_wrapper, .under_footer_info
+    margin: 0 auto
+    max-width: 1280px
+    width: 100%
+
+.head
+    background-color: $color-bg-blocks
+
+.head_wrapper
+    display: flex
+    justify-content: space-between
+    min-height: 116px
+    padding: 24px 80px
+
+    &_time
+
+        @include header_column
+        a
+            @include header_links
+    &_time span:nth-child(2)
+        padding-left: 3px
+
+    &_time img
+        vertical-align: middle
+
+    &_tel-number
+
+        @include header_column
+        a
+            @include header_links
+    &_tel-number span:first-child
+        padding-left: 2px
+
+    &_tel-number img
+        vertical-align: middle
+
+    &_social
+
+        @include header_column
+        a
+            @include header_links
+    &_social a:first-child
+        padding: 2px
+    &_social img
+        vertical-align: middle
+
+.navigation
+    background-color: $color-bg-nav
+
+.navigation_wrapper
+    min-height: 80px
+    background: $color-bg-nav
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-left: 80px
+
+    &_logo a
+        font-family: Roboto
+        font-size: 48px
+        font-weight: 700
+        text-decoration: none
+        color: #fff
+        letter-spacing: 0.1em
+    &_links
+        width: 100%
+        list-style: none
+        display: flex
+        justify-content: space-evenly
+
+    &_links a
+        text-decoration: none
+        font-family: Roboto
+        font-size: 24px
+        font-weight: 500
+        color: #FFFFFF
+        letter-spacing: 2px
+    &_links a:hover
+        color: #3ca7d1
+
+.call
+    background-color: $color-bg-blocks
+
+.call_wrapper
+    min-height: 400px
+    background-color: $color-bg-blocks
+    display: flex
+    justify-content: space-between
+    padding: 0 80px 0 80px
+    &_general
+        padding: 80px 0 80px 0
+
+    &_heading
+
+        font-family: Roboto
+        font-size: 36px
+        font-weight: 700
+        line-height: 42px
+        letter-spacing: 0.15em
+        color: $color-text
+        line-height: 2
+        margin-bottom: 70px
+    &_button
+        padding: 15px 20px
+        border: 3px solid #0590C8
+        text-decoration: none
+        border-radius: 16px
+        font-size: 24px
+        color: $color-text
+        font-weight: 500
+        letter-spacing: 2.5px
+    &_button:hover
+        cursor: pointer
+        border-color: #01415a
+
+    &_logo img
+
+.our-services
+    background-color: $color-bg-other-blocks
+
+.services_wrapper
+    min-height: 482px
+    padding: 39px 80px 40px 80px
+    background-color: $color-bg-other-blocks
+    &_heading
+        @include name_blocks
+        margin-bottom: 40px
+    &_jobs
+
+        width: 100%
+        display: flex
+
+        &_block
+            width: 100%
+            border: 2px solid #0590C8
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25)
+            border-radius: 16px
+            padding: 25px 25px
+            margin-right: 40px
+            background-color: #fff
+            text-decoration: none
+            font-weight: bold
+            font-size: 24px
+            line-height: 30px
+            color: #16234D
+            text-align: center
+            &_font
+                font-size: 20px
+                line-height: 20px
+        &_block:last-of-type
+            margin-right: 0
+        &_block:hover
+            cursor: pointer
+            border-color: #0B314F
+
+        &_block img
+            min-height: 150px
+            min-width: 150px
+            width: 100%
+            margin-bottom: 25px
+
+.advantages
+    background-color: $color-bg-blocks
+
+.advantages_wrapper
+    min-height: 342px
+    padding: 0 80px 0 80px
+    &_heading
+        @include name_blocks
+        margin: 40px 0
+
+    &_blocks
+        display: flex
+        justify-content: space-around
+
+        &_icons
+            font-weight: 900
+            font-size: 18px
+            line-height: 24px
+            color: $color-text
+            align-items: center
+            text-align: center
+            letter-spacing: 2px
+        &_icons img
+            margin-bottom: 32px
+
+.to-order
+    background-color: $color-bg-other-blocks
+
+.to-order_wrapper
+    min-height: 228px
+
+    background-color: $color-bg-other-blocks
+    padding: 40px 80px 40px 80px
+    &_heading
+        @include name_blocks
+        margin-bottom: 40px
+    &_blocks
+        list-style: none
+        display: flex
+        justify-content: space-between
+        width: 100%
+    &_blocks  img
+        width: 100%
+        min-height: 80px
+    &_blocks li
+        position: relative
+
+    &_blocks div
+        width: 100%
+        position: absolute
+        font-size: 24px
+        font-weight: 700
+        letter-spacing: 0.1em
+        color: #fff
+        text-align: center
+        top: 10px
+
+.about_us
+    background-color: $color-bg-blocks
+
+.about_us_wrapper
+    min-height: 456px
+    background-color: $color-bg-blocks
+    padding: 0 80px 0 80px
+    width: 100%
+    display: flex
+    &_info
+        margin-bottom: 40px
+        &_heading
+            @include name_blocks
+            margin: 72px 0 24px 0
+        &_text
+            font-size: 24px
+            font-weight: 400
+            line-height: 28px
+            letter-spacing: 2px
+            text-align: left
+            color: rgba(11, 49, 79, 1)
+
+        &_image
+            margin-top: 33px
+            width: 100%
+
+.footer
+    background-color: $color-bg-footer
+
+.footer_wrapper
+    min-height: 899px
+    width: 100%
+    background-color: $color-bg-footer
+    display: flex
+    justify-content: space-between
+    padding: 40px 80px
+    &_left_contacts
+
+        &_icons
+            list-style-type: none
+            margin-bottom: 32px
+        &_icons a, li
+            font-weight: bold
+            font-size: 18px
+            line-height: 30px
+            color: $color-bg-footer-text
+            text-decoration: none
+            letter-spacing: 1px
+            margin-bottom: 10px
+        &_icons li:nth-child(3)
+            padding-left: 3px
+        &_icons li:nth-child(6)
+            padding-left: 3px
+
+        &_icons a:hover
+            cursor: pointer
+
+        &_icons img
+            margin-right: 5px
+
+        &_logo
+            font-weight: 500
+            font-size: 24px
+            color: $color-bg-footer-text
+            margin-bottom: 16px
+    &_left_contacts h2
+        weight: bold
+        font-size: 36px
+        color: $color-bg-footer-text
+        margin-bottom: 32px
+        letter-spacing: 0.1em
+    &_left_form h3
+        font-weight: 500
+        font-size: 24px
+        letter-spacing: 1px
+        color: $color-bg-footer-text
+        letter-spacing: 2px
+        margin-bottom: 16px
+    &_left_form p
+        font-weight: 400
+        font-size: 14px
+        letter-spacing: 2px
+        color: $color-bg-footer-text
+        margin-bottom: 16px
+
+    &_left_form a
+        cursor: pointer
+        color: #0590C8
+        letter-spacing: 2px
+
+    &_left_form_window1, &_left_form_window2,
+        border: 1px solid #FFFFFF
+        border-radius: 8px
+        background: $color-bg-footer
+        padding: 12px
+        color: rgba(191, 191, 191, 1)
+        font-size: 14px
+        width: 100%
+        margin-bottom: 16px
+    &_left_form_window3
+        border: 1px solid #FFFFFF
+        border-radius: 8px
+        background: $color-bg-footer
+        padding: 12px
+        color: rgba(191, 191, 191, 1)
+        font-size: 14px
+        width: 100%
+        height: 84px
+
+        margin-bottom: 16px
+    &_left_form_button
+        width: 100%
+        border: 2px solid #0590C8
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25)
+        border-radius: 16px
+        background-color: $color-bg-footer-text
+        padding: 24px 10px
+        font-weight: 500
+        font-size: 24px
+        letter-spacing: 0.1em
+        color: #0B314F
+        margin-bottom: 24px
+    &_left_form_button:hover
+        cursor: pointer
+        color: #0590C8
+
+.footer_wrapper
+    &_right
+        position: relative
+        &_buttonup
+            position: absolute
+            top: 0
+            right: 0
+            border: 3px solid #0590C8
+            border-radius: 6px
+            background: #FFFFFF
+            text-align: center
+            padding: 9px 8px 13px 8px
+            text-decoration: none
+            &_arrow p
+                font-weight: 500
+                font-size: 12px
+                color: $color-text
+                letter-spacing: 0.05em
+                margin-top: 7px
+                text-align: center
+
+        &_individual p
+            font-weight: 500
+            font-size: 18px
+            line-height: 30px
+            color: $color-bg-footer-text
+            letter-spacing: 2px
+            margin: 72px 0 32px 0
+        &_individual span
+            font-size: 25px
+        &_address
+            font-weight: 500
+            font-size: 18px
+            color: $color-bg-footer-text
+            letter-spacing: 2px
+            margin-bottom: 16px
+        &_map
+            width: 740px
+            height: 640px
+            overflow: hidden
+            border: 1px solid #FFFFFF
+            border-radius: 8px
+
+.under_footer_info
+    min-height: 72px
+    display: flex
+    justify-content: space-between
+    padding: 24px 80px
+    font-size: 18px
+    letter-spacing: 1px
+    font-weight: 500
+.under_footer_info p
+    color: $color-text
