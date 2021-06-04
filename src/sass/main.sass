@@ -3,6 +3,7 @@
     box-sizing: border-box
     margin: 0
     padding: 0
+
 *:hover
     transition-duration: .3s
 html
@@ -49,6 +50,7 @@ $color-bg-footer-text: #fff
     margin: 0 auto
     max-width: 1280px
     width: 100%
+    overflow: hidden
 
 .head
     background-color: $color-bg-blocks
@@ -95,7 +97,7 @@ $color-bg-footer-text: #fff
     background-color: $color-bg-nav
 
 .navigation_wrapper
-    min-height: 80px
+    height: 80px
     background: $color-bg-nav
     display: flex
     justify-content: space-between
@@ -125,6 +127,56 @@ $color-bg-footer-text: #fff
     &_links a:hover
         color: #3ca7d1
 
+    &_gamburger
+        width: 35px
+        height: 30px
+        display: none
+        z-index: 3
+    &_gamburger:hover
+        cursor: pointer
+
+    &_gamburger span
+        height: 3px
+        display: block
+        background-color: #fff
+        margin-top: 7px
+        border-radius: 6px
+
+    &_gamburger span:first-child
+        margin-top: 0
+    &_gamburger-menu
+        display: none
+        position: absolute
+        top: 133px
+        right: -130px
+
+    &_gamburger-menu.active
+        display: block
+        max-width: 269px
+        width: 100%
+        background: #474A51
+        border: 1px solid white
+        border-radius: 5px
+        padding: 24px 48px
+        position: absolute
+        top: 133px
+        right: 0
+        transition: 1s
+        z-index: 1
+        li
+            list-style: none
+            font-style: normal
+            font-weight: bold
+            font-size: 16px
+            line-height: 19px
+            margin-bottom: 24px
+            letter-spacing: 0.05em
+
+        li:last-child
+            margin-bottom: 0
+        a
+            text-decoration: none
+            color: white
 .call
     background-color: $color-bg-blocks
 
@@ -134,33 +186,31 @@ $color-bg-footer-text: #fff
     display: flex
     justify-content: space-between
     padding: 0 80px 0 80px
+
     &_general
         padding: 80px 0 80px 0
+        &_heading
 
-    &_heading
-
-        font-family: Roboto
-        font-size: 36px
-        font-weight: 700
-        line-height: 42px
-        letter-spacing: 0.15em
-        color: $color-text
-        line-height: 2
-        margin-bottom: 70px
-    &_button
-        padding: 15px 20px
-        border: 3px solid #0590C8
-        text-decoration: none
-        border-radius: 16px
-        font-size: 24px
-        color: $color-text
-        font-weight: 500
-        letter-spacing: 2.5px
-    &_button:hover
-        cursor: pointer
-        border-color: #01415a
-
-    &_logo img
+            font-family: Roboto
+            font-size: 36px
+            font-weight: 700
+            line-height: 42px
+            letter-spacing: 0.15em
+            color: $color-text
+            line-height: 2
+            margin-bottom: 70px
+        &_button
+            padding: 15px 20px
+            border: 3px solid #0590C8
+            text-decoration: none
+            border-radius: 16px
+            font-size: 24px
+            color: $color-text
+            font-weight: 500
+            letter-spacing: 2.5px
+        &_button:hover
+            cursor: pointer
+            border-color: #01415a
 
 .our-services
     background-color: $color-bg-other-blocks
@@ -173,7 +223,6 @@ $color-bg-footer-text: #fff
         @include name_blocks
         margin-bottom: 40px
     &_jobs
-
         width: 100%
         display: flex
 
@@ -191,6 +240,8 @@ $color-bg-footer-text: #fff
             line-height: 30px
             color: #16234D
             text-align: center
+            overflow: hidden
+
             &_font
                 font-size: 20px
                 line-height: 20px
@@ -201,8 +252,6 @@ $color-bg-footer-text: #fff
             border-color: #0B314F
 
         &_block img
-            min-height: 150px
-            min-width: 150px
             width: 100%
             margin-bottom: 25px
 
@@ -442,3 +491,169 @@ $color-bg-footer-text: #fff
     font-weight: 500
 .under_footer_info p
     color: $color-text
+
+@media  (max-width: 1280px)
+
+    .head_wrapper, .navigation_wrapper, .call_wrapper, .services_wrapper, .advantages_wrapper, .to-order_wrapper, .about_us_wrapper, .footer_wrapper, .under_footer_info
+        padding-left: 48px
+        padding-right: 48px
+
+@media only all and (max-width: 1160px)
+    .footer_wrapper
+        &_right
+            &_map
+                width: 600px
+                height: 553px
+
+@media only all and (max-width: 1050px)
+    .navigation_wrapper
+        &_links
+            display: none
+        &_gamburger
+            display: block
+    .services_wrapper
+        &_jobs
+            &_block
+                width: 22%
+                padding: 20px 15px
+                font-size: 20px
+    .footer_wrapper_right
+        &_map
+@media only all and (max-width: 768px)
+
+    .head_wrapper, .navigation_wrapper, .call_wrapper, .services_wrapper, .advantages_wrapper, .to-order_wrapper, .about_us_wrapper, .footer_wrapper, .under_footer_info
+        padding-left: 24px
+        padding-right: 24px
+
+    .call_wrapper
+        &_logo img
+            width: 100%
+    .head_wrapper
+        padding: 20px 24px
+        &_time , &_tel-number,&_social
+            font-size: 12px
+            font-weight: 400
+            letter-spacing: 1px
+
+    .navigation
+
+        &_wrapper
+            height: 64px
+            &_logo a
+                font-weight: 400
+                font-size: 24px
+                letter-spacing: 1px
+            &_gamburger
+                height: 22px
+                width: 25px
+
+    .call
+
+        &_wrapper
+            min-height: 240px
+            &_general
+                padding: 0
+                &_heading
+                    margin: 0
+                    padding: 48px 24px 36px 0
+                    font-size: 22px
+                &_button
+                    display: block
+                    width: 200px
+                    height: 40px
+                    border: 2px solid #0590C8
+                    border-radius: 12px
+                    padding: 0
+                    margin-bottom: 48px
+                    span
+                        font-size: 14px
+                        color: $color-text
+                        margin: 0 13px
+            &_logo img
+                width: 240px
+
+    .services
+        &_wrapper
+            min-height: 291px
+            padding-top: 24px
+            padding-bottom: 24px
+            &_heading
+                font-size: 18px
+                margin-bottom: 24px
+            &_jobs
+                &_block
+                    padding: 16px 16px
+                    margin-right: 24px
+                    p
+                        font-size: 12px
+                        line-height: 12px
+                        space-letter: 1px
+                    img
+                        margin-bottom: 16px
+
+    .advantages
+        height: 204px
+        &_wrapper
+            min-height: 204px
+            padding-top: 24px
+            padding-bottom: 24px
+            &_heading
+                margin-top: 0
+                margin-bottom: 24px
+                p
+                    font-size: 18px
+                    letter-spacing: 10%
+            &_blocks
+                &_icons img
+                    width: 50%
+                    margin-bottom: 20px
+                &_icons p
+                    font-size: 12px
+                    line-height: 14px
+                    letter: 1px
+
+    .to-order
+        height: 138px
+        &_wrapper
+            min-height: 138px
+            padding-top: 24px
+            padding-bottom: 24px
+            &_heading
+                margin-top: 0
+                margin-bottom: 24px
+                p
+                    font-size: 18px
+                    letter-spacing: 10%
+            &_blocks
+                img
+                    min-height: 100%
+                div
+                    font-size: 14px
+                    letter-spacing: 1%
+    .about_us
+
+        &_wrapper
+            min-height: 256px
+            padding-top: 24px
+
+            &_info
+                width: 100%
+                margin-bottom: 24px
+                padding-right: 50px
+                &_heading
+                    margin: 0
+                    p
+                        font-size: 18px
+                        letter-spacing: 10%
+                        margin-top: 0
+                        margin-bottom: 24px
+                &_text
+                    p
+                        font-size: 14px
+                        line-height: 20px
+                        letter-spacing: 1px
+                &_image
+
+                    margin: 0
+                    width: 35%
+                    height: 80%
