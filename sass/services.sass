@@ -1,0 +1,91 @@
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+*:hover
+    transition-duration: .3s
+html
+    font-family: "Roboto", sans-serif
+    scroll-behavior: smooth
+
+/*Variables*/
+$color-bg-blocks: #fff
+$color-bg-other-blocks: #ECECEC
+$color-text: #0B314F
+$color-bg-nav: #474A51
+$color-bg-footer: #474A51
+$color-bg-footer-text: #fff
+/*Variables*/
+
+/*MIXINS*/
+@mixin header_column
+    display: flex
+    flex-flow: column
+    font-family: Roboto
+    font-size: 18px
+    font-style: normal
+    font-weight: 700
+    line-height: 30px
+    color: $color-text
+
+@mixin header_links
+    text-decoration: none
+    color: #0B314F
+
+    &:hover
+        cursor: pointer
+        text-decoration: none
+        color: #3ca7d1
+
+@mixin name_blocks
+    font-weight: 700
+    font-size: 36px
+    letter-spacing: 2px
+    color: $color-text
+/*MIXINS*/
+
+.head_wrapper, .navigation_wrapper, .call_wrapper, .services_wrapper, .advantages_wrapper, .to-order_wrapper, .about_us_wrapper, .footer_wrapper, .under_footer_info
+    margin: 0 auto
+    max-width: 1280px
+    width: 100%
+
+.head
+    background-color: $color-bg-blocks
+
+.head_wrapper
+    display: flex
+    justify-content: space-between
+    min-height: 116px
+    padding: 24px 80px
+
+    &_time
+
+        @include header_column
+        a
+            @include header_links
+    &_time span:nth-child(2)
+        padding-left: 3px
+
+    &_time img
+        vertical-align: middle
+
+    &_tel-number
+
+        @include header_column
+        a
+            @include header_links
+    &_tel-number span:first-child
+        padding-left: 2px
+
+    &_tel-number img
+        vertical-align: middle
+
+    &_social
+
+        @include header_column
+        a
+            @include header_links
+    &_social a:first-child
+        padding: 2px
+    &_social img
+        vertical-align: middle
